@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CycleCell.h
 //  网易新闻
 //
 //  Created by apple on 15-4-19.
@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Headline;
 
-@interface ViewController : UIViewController
+@interface CycleCell : UICollectionViewCell
 
-
+@property (strong, nonatomic) Headline *headline;
 @end
-
