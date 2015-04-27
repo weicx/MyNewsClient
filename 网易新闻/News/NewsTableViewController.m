@@ -20,10 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    [self refreshDataList];
-    
-//    self.tableView.rowHeight = 80;
+
 }
 
 - (void)setDataList:(NSArray *)dataList {
@@ -61,7 +58,7 @@
     }];
 }
 #pragma mark - TableView delegate
-//代理方法设置行高
+//设置行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     News *news = self.dataList[indexPath.row];

@@ -57,7 +57,6 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            NSLog(@"%@", error);
             //弹窗提示网络加载错误
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"网络加载错误" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
             [alert show];
