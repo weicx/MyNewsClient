@@ -17,7 +17,7 @@
 + (instancetype)headlineWithDict:(NSDictionary *)dict;
 
 /**
- *  返回模型数组  因为是去网络异步加载图片，所以不能直接返回数组，很有可能为空。要通过把数组保存在block里的方式来获取数组
+ *  返回模型数组 
  */
 + (void)headlineWithCompletion:(void (^)(NSArray *))completion;
 @end

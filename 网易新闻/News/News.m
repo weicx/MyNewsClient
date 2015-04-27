@@ -30,7 +30,7 @@
 }
 
 + (void)newsWithURLString:(NSString *)urlString completion:(void(^)(NSArray *))completion {
-    // 断言！针对开发调试的校验，提示程序员某一个参数必须要符合条件！
+    // 断言
     NSAssert(completion != nil, @"必须传入回调参数");
     
     [[NetworkTools sharedNetworkTools] GET:urlString parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -52,6 +52,7 @@
     }];
 }
 
+//运行时动态获取属性
 + (NSArray *)loadProperties {
     unsigned int count = 0;
     

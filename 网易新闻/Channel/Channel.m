@@ -47,7 +47,6 @@
     }];
 }
     
-//拼接urlString 。tid:即 T1348649654285 等，这个决定着是什么频道，因此必须在这里才能拼接到要加载该频道新闻的完整 URL，并作为属性保存起来！在HomeViewController里作为属性数值，一路传递，在NewsTableViewController中拿来联网获取数据，完成使命！
 - (void)setTid:(NSString *)tid {
     
     _tid = tid;

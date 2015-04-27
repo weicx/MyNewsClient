@@ -20,7 +20,6 @@
 - (void)setHeadline:(Headline *)headline {
     _headline = headline;
     
-    //给控件赋值
     [self.imageView setImageWithURL:[NSURL URLWithString:headline.imgsrc]];
 }
 @end

@@ -15,12 +15,11 @@
     
     //1.加载storyboard，拿到新闻视图控制器
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"News" bundle:nil];
-    self.newsVC = sb.instantiateInitialViewController;//箭头所指控制器
+    self.newsVC = sb.instantiateInitialViewController;
     
     //2.保证代码添加的视图大小和 Cell 的大小一致
     self.newsVC.view.frame = self.bounds;
     
-    //3.把新闻控制器的根视图加到Cell上
     [self addSubview:self.newsVC.view];
 }
 

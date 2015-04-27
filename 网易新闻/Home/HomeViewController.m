@@ -30,9 +30,6 @@
     
     self.channelView.showsHorizontalScrollIndicator = NO;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"account_logout_button"] forBarMetrics:UIBarMetricsDefault];
-//    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo57"]];
-//    self.navigationItem.titleView.frame = CGRectMake(0, 0, 0, 90);
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +37,7 @@
     
 }
 /**
- *  此方法在所有子视图布局完成，大小已经确定
+ *  此方法在所有子视图布局完成时调用，大小已经确定
  */
 - (void)viewDidLayoutSubviews {
     
@@ -58,7 +55,6 @@
     self.layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.collectionView.pagingEnabled = YES;
     self.collectionView.showsHorizontalScrollIndicator = NO;
-    
 }
 
 #pragma mark - collectionView 数据源方法
@@ -70,17 +66,13 @@
     
     ChannelCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
     
-    // 判断当前 cell 的视图控制器是否是 homeViewController 的子控制器
-    // 如果不是，需要添加;如果已经添加，就不需要再次添加
-    // 以下代码非常非常非常重要！如果没有加入子视图控制器，会打断响应者链条
-    // 后续如果再开发复杂的功能，有可能会出现让人困惑的问题！
-    // *** 一定记住：做多视图控制器开发时，一定要添加子视图控制器！
+    // 添加子视图控制器
     if (![self.childViewControllers containsObject:cell.newsVC]) {//不在子控制器数组，需要添加
         [self addChildViewController:(UIViewController *)cell.newsVC];
     }
     Channel *channel = self.channels[indexPath.item];
     
-    cell.urlString = channel.urlString;//这一句很厉害，将模型里保存的urlString一路上传，先传给ChannelCell，再传给 NewsTableViewController，直接联网刷新数据！进而刷新表格！
+    cell.urlString = channel.urlString;
     
     return cell;
 }
@@ -93,24 +85,23 @@
     ChannelLabel *currentLabel = self.channelView.subviews[self.currentIndex];
     //下一个标签
     ChannelLabel *nextLabel = nil;
-    //遍历数组，查找下一个标签.在所有当前可见的Items数组中寻找，这个是关键！
+    
     for (NSIndexPath *indexPath in self.collectionView.indexPathsForVisibleItems) {
-        if (indexPath.item != self.currentIndex) {//因为当前可见的item最多有两个，一个还是当前标签，另外一个必定是下一个标签！
+        
+        if (indexPath.item != self.currentIndex) {
+            
             nextLabel = self.channelView.subviews[indexPath.item];
-            //已经找到了就退出循环
+            
             break;
         }
     }
-    
-    //如果没有下一个标签，直接返回。针对的是滚动到两端的情况！
-    if (nextLabel == nil) {//遍历完依然为空，说明下一个标签不存在！
+    //滚动到两端的情况
+    if (nextLabel == nil) {
         return;
     }
     
-    
-    //当前标签逐渐变小，下一个标签逐渐变大，计算缩放的比例
-    //下一个标签的缩放比例
-    CGFloat nextScale = ABS((float)scrollView.contentOffset.x / scrollView.bounds.size.width - self.currentIndex);//ABS作用是取绝对值，因为往回滚动计算出来是负值。缩放比例在[0,1]，且在不断变大！
+    //下一个标签的缩放比例  ABS取绝对值
+    CGFloat nextScale = ABS((float)scrollView.contentOffset.x / scrollView.bounds.size.width - self.currentIndex);
     //相对应的当前标签的缩放比例
     CGFloat currentScale = 1 - nextScale;
     
@@ -136,16 +127,15 @@
     CGFloat h = self.channelView.bounds.size.height;
     
     for (Channel *channel in self.channels) {
-        ChannelLabel *label = [ChannelLabel channelLabelWithTitle:channel.tname];//这句话将label的文字和size都确定了
+        ChannelLabel *label = [ChannelLabel channelLabelWithTitle:channel.tname];
         
-        //设置frame
         label.frame = CGRectMake(x, 0, label.bounds.size.width, h);
-        x += label.bounds.size.width;//这个是下一个label的x值
+        x += label.bounds.size.width;
         
         [self.channelView addSubview:label];
     }
     
-    self.channelView.contentSize = CGSizeMake(x + margin, h);//滚动范围，宽度是最后一个label的x值加上间距
+    self.channelView.contentSize = CGSizeMake(x + margin, h);
     
     //默认选中第一条
     self.currentIndex = 0;
