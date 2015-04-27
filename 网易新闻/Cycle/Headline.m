@@ -44,7 +44,7 @@
     [[NetworkTools sharedNetworkTools] GET:@"ad/headline/0-4.html" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         //获取字典中的数组，得到数据的字典数组
-        NSArray *array = responseObject[@"head_ad"];
+        NSArray *array = responseObject[@"headline_ad"];
         //字典转模型
         NSMutableArray *arrayM = [NSMutableArray array];
         for (NSDictionary *dict in array) {

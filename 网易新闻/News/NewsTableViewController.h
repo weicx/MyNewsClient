@@ -10,4 +10,8 @@
 
 @interface NewsTableViewController : UITableViewController
 
+/**
+ *  频道的 URL 字符串
+ */
+@property (copy, nonatomic) NSString *urlString;
 @end

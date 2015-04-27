@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AFNetworkActivityIndicatorManager.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,27 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //使用AFN的时候，以下三句话必须要写！
+    //1.设置网络指示器（小菊花）
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    
+    //2.设置缓存大小
+    /**
+     AFN 和 SDWebImage 的缓存的区别
+     AFN 使用的是系统的缓存机制
+     SDWebImage 是自己实现的缓存机制
+     - 缓存周期：1周
+     - 可以设置缓存大小，在每次应用程序退出到后台的时候，清理缓存
+     1> 删除1周前的图片
+     2> 遍历磁盘目录，将超出缓存设置大小的图片，从大到小删除，一直删除到缓存设置上限为止
+     */
+    
+    //设置内存缓存为4M  磁盘缓存为20M
+    NSURLCache *cache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    [NSURLCache setSharedURLCache:cache];
+    
+    application.statusBarStyle = UIStatusBarStyleLightContent;
     return YES;
 }
 

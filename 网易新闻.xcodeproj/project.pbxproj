@@ -39,6 +39,11 @@
 		18029B531AE4A5880070867C /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18029B3E1AE4A5880070867C /* UIProgressView+AFNetworking.m */; };
 		18029B541AE4A5880070867C /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18029B401AE4A5880070867C /* UIRefreshControl+AFNetworking.m */; };
 		18029B551AE4A5880070867C /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18029B421AE4A5880070867C /* UIWebView+AFNetworking.m */; };
+		18E6263E1AE73E7100C1FD52 /* ChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E6263D1AE73E7100C1FD52 /* ChannelCell.m */; };
+		1F260A6D1AE4BE56006A052B /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F260A6C1AE4BE56006A052B /* NewsCell.m */; };
+		1F260A701AE4BE6A006A052B /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F260A6F1AE4BE6A006A052B /* News.m */; };
+		1F8017171AE55BDA005D07C3 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8017161AE55BDA005D07C3 /* Channel.m */; };
+		1F80171A1AE55C19005D07C3 /* ChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8017191AE55C19005D07C3 /* ChannelLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +119,16 @@
 		18029B401AE4A5880070867C /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		18029B411AE4A5880070867C /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		18029B421AE4A5880070867C /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		18E6263C1AE73E7100C1FD52 /* ChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelCell.h; sourceTree = "<group>"; };
+		18E6263D1AE73E7100C1FD52 /* ChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelCell.m; sourceTree = "<group>"; };
+		1F260A6B1AE4BE56006A052B /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		1F260A6C1AE4BE56006A052B /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		1F260A6E1AE4BE6A006A052B /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		1F260A6F1AE4BE6A006A052B /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		1F8017151AE55BDA005D07C3 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		1F8017161AE55BDA005D07C3 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
+		1F8017181AE55C19005D07C3 /* ChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelLabel.h; sourceTree = "<group>"; };
+		1F8017191AE55C19005D07C3 /* ChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				18029AE01AE48C740070867C /* Home */,
+				1F8017141AE55BC0005D07C3 /* Channel */,
 				18029AD41AE489F60070867C /* News */,
 				18029AD61AE48A5B0070867C /* Cycle */,
 				18029B151AE4982E0070867C /* Tools */,
@@ -200,6 +216,10 @@
 				18029ADE1AE48B850070867C /* News.storyboard */,
 				18029AE61AE48CFB0070867C /* NewsTableViewController.h */,
 				18029AE71AE48CFB0070867C /* NewsTableViewController.m */,
+				1F260A6B1AE4BE56006A052B /* NewsCell.h */,
+				1F260A6C1AE4BE56006A052B /* NewsCell.m */,
+				1F260A6E1AE4BE6A006A052B /* News.h */,
+				1F260A6F1AE4BE6A006A052B /* News.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -314,6 +334,19 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		1F8017141AE55BC0005D07C3 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				1F8017151AE55BDA005D07C3 /* Channel.h */,
+				1F8017161AE55BDA005D07C3 /* Channel.m */,
+				1F8017181AE55C19005D07C3 /* ChannelLabel.h */,
+				1F8017191AE55C19005D07C3 /* ChannelLabel.m */,
+				18E6263C1AE73E7100C1FD52 /* ChannelCell.h */,
+				18E6263D1AE73E7100C1FD52 /* ChannelCell.m */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -418,7 +451,9 @@
 			files = (
 				18029B4B1AE4A5880070867C /* AFURLSessionManager.m in Sources */,
 				18029B481AE4A5880070867C /* AFURLConnectionOperation.m in Sources */,
+				1F260A6D1AE4BE56006A052B /* NewsCell.m in Sources */,
 				18029B431AE4A5880070867C /* AFHTTPRequestOperation.m in Sources */,
+				1F80171A1AE55C19005D07C3 /* ChannelLabel.m in Sources */,
 				18029AEE1AE48D540070867C /* CycleCell.m in Sources */,
 				18029B4E1AE4A5880070867C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				18029B521AE4A5880070867C /* UIImageView+AFNetworking.m in Sources */,
@@ -428,15 +463,18 @@
 				18029ADC1AE48B070070867C /* AppDelegate.m in Sources */,
 				18029B4D1AE4A5880070867C /* README.md in Sources */,
 				18029B501AE4A5880070867C /* UIAlertView+AFNetworking.m in Sources */,
+				18E6263E1AE73E7100C1FD52 /* ChannelCell.m in Sources */,
 				18029AE81AE48CFB0070867C /* NewsTableViewController.m in Sources */,
 				18029B451AE4A5880070867C /* AFHTTPSessionManager.m in Sources */,
 				18029AEB1AE48D330070867C /* CycleCollectionViewController.m in Sources */,
 				18029B181AE498710070867C /* NetworkTools.m in Sources */,
 				18029AB11AE489680070867C /* main.m in Sources */,
+				1F8017171AE55BDA005D07C3 /* Channel.m in Sources */,
 				18029B531AE4A5880070867C /* UIProgressView+AFNetworking.m in Sources */,
 				18029B471AE4A5880070867C /* AFSecurityPolicy.m in Sources */,
 				18029B511AE4A5880070867C /* UIButton+AFNetworking.m in Sources */,
 				18029AE51AE48CC60070867C /* HomeViewController.m in Sources */,
+				1F260A701AE4BE6A006A052B /* News.m in Sources */,
 				18029B491AE4A5880070867C /* AFURLRequestSerialization.m in Sources */,
 				18029B461AE4A5880070867C /* AFNetworkReachabilityManager.m in Sources */,
 				18029B541AE4A5880070867C /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -613,6 +651,7 @@
 				18029AD01AE489680070867C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18029AD11AE489680070867C /* Build configuration list for PBXNativeTarget "网易新闻Tests" */ = {
 			isa = XCConfigurationList;
@@ -621,6 +660,7 @@
 				18029AD31AE489680070867C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
